@@ -12,17 +12,15 @@ laravel5.1 + mysql5.5
 1. 建立数据库名为：mrblog
 2. 把包目录下的mrblog.sql导到库mrblog中，建议使用mysql source命令导入
 3. 复制doc/.env文件到根目录下，修改数据库连接为你的信息,这里是（host=localhost,username=root,pwd=root）
-4. 默认使用的域名为admin.opcache.net和www.opcache.net，如果你需要修改，那么修改文件nginx或apache配置文件
+4. 默认使用的域名为admin.opcache.net和www.opcache.net，如果你需要修改，那么修改文件
 
-apache的vhosts.conf文件
+config/sys.php
+中的值
 
-<VirtualHost *:80>
-    ServerAdmin webmaster@dummy-host2.example.com
-    DocumentRoot "E:/phpStudy/PHPTutorial/WWW/laravel51/public"
-    ServerName laravel51.com
-    ErrorLog "logs/dummy-host2.example.com-error.log"
-    CustomLog "logs/dummy-host2.example.com-access.log" common
-</VirtualHost>
+sys_images_domain
+sys_admin_domain
+sys_blog_domain
+sys_blog_nopre_domain
 
 5.配置你的域名并指向目录public
 6.默认后台密码，其实是md5，你可以改你想要的
@@ -50,15 +48,15 @@ Mbstring PHP 扩展
 Tokenizer PHP 扩展
 此外测试mysql5.5通过。或使用可以兼容的版本。
 
-10. 配置虚拟主机 laravel51.com
+10. 配置虚拟主机 admin.opcache.net
 ####
 <VirtualHost *:80>
 ####
     ServerAdmin webmaster@dummy-host2.example.com
 ####
-    DocumentRoot "E:/phpStudy/PHPTutorial/WWW/laravel51/public"
+    DocumentRoot "E:/phpStudy/PHPTutorial/WWW/laravel5_admin/public"
 ####
-    ServerName laravel51.com
+    ServerName admin.opcache.net
 ####
     ErrorLog "logs/dummy-host2.example.com-error.log"
 ####
@@ -69,8 +67,9 @@ Tokenizer PHP 扩展
 
 11. 添加host
 ####
-127.0.0.1  laravel51.com
+127.0.0.1  admin.opcache.net
 
 #### 使用说明
 
-在浏览器输入 http://laravel51.com
+访问： 输入 admin.opcache.net
+![输入图片说明](https://gitee.com/uploads/images/2018/0517/162326_568d0745_701711.png "屏幕截图.png")
